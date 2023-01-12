@@ -4,21 +4,24 @@ public class Main {
 
     public static void main(String[] args) {
         Scanner ler = new Scanner(System.in);
-        String tipoDeOperacao;
+        char tipoDeOperacao;
         double valor1, valor2, resultado;
 
         System.out.println("Tipos de operação: + (Adição), - (Subtração), * (Multiplicação), / (Divisão) ");
         System.out.print("Indique o tipo de operação, conforme a mensagem acima: ");
-        tipoDeOperacao = ler.nextLine();
+        tipoDeOperacao = ler.next().charAt(0);
 
-        if(tipoDeOperacao != "+"){
+        if(tipoDeOperacao == '+'){
+            System.out.println("Você selecionou uma Adição");
+        }else if (tipoDeOperacao == '-'){
+            System.out.println("Você selecionou uma Subtração");
+        }else if(tipoDeOperacao == '*'){
+            System.out.println("Você selecionou uma Multiplicação");
+        }else if(tipoDeOperacao == '/'){
+            System.out.println("Você selecionou uma Divisão");  
+        }else{
             System.out.println("Favor inserir um tipo de operação válido");
-        }else if (tipoDeOperacao != "-"){
-            System.out.println("Favor inserir um tipo de operação válido");
-        }else if(tipoDeOperacao != "*"){
-            System.out.println("Favor inserir um tipo de operação válido");
-        }else if(tipoDeOperacao != "/"){
-            System.out.println("Favor inserir um tipo de operação válido");  
+            System.exit(0);
         }
 
 
@@ -31,22 +34,22 @@ public class Main {
 
         switch (tipoDeOperacao)
         {
-            case "+":
+            case '+':
                 resultado = valor1 + valor2;
                 System.out.println("O resultado é: " + resultado);
                 break;
 
-            case "-":
+            case '-':
                 resultado = valor1 - valor2;
                 System.out.println("O resultado é: " + resultado);
                 break;
 
-            case "*":
+            case '*':
                 resultado = valor1 * valor2;
                 System.out.println("O resultado é: " + resultado);
                 break;
 
-            case "/":
+            case '/':
                 resultado = valor1 / valor2;
                 System.out.println("O resultado é: " + resultado);
                 break;
